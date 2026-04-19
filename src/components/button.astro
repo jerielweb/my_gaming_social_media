@@ -1,0 +1,11 @@
+---
+import type { ButtonProps } from "../types/types.ts";
+interface Props extends ButtonProps {}
+const { href, text, style, target } = Astro.props;
+---
+
+<div class="border size-fit hover:border-[#666] active:border-black">
+  <a href={href} class={style} id="button" target={target}>
+    {text}
+  </a>
+</div>

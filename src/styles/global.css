@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    background: url('../assets/Banner para el bot.png')
+    no-repeat center center fixed;
+}
+@theme {
+    --font-minecraft: 'Minecraft', sans-serif;
+}
+#button {
+    display: flex;
+    background-color: #333;
+    align-items: center;
+    justify-content: center;
+    color: #ddd;
+    border: 1px solid;
+    border-color: #555 #222 #222 #555;
+    padding: 2px;
+    font-family: 'Minecraft', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+#hero {
+    border: 1px solid;
+    border-color: #555 #222 #222 #555;
+}
+
+#button:hover {
+  border-color: #a487da #400472 #520775 #5a4076;
+  color: #fff;
+  background-color: #4a0583;
+}

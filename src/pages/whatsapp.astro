@@ -2,7 +2,8 @@
 import Button from "../components/button.astro";
 import Layout from "../layouts/Layout.astro";
 import profile from "../assets/profile.jpg";
-import { Bunttons, Games } from "../data/data.ts";
+import { WhatsappButtons } from "../data/whatsapp.ts";
+import { Games } from "../data/data.ts";
 import { Image } from "astro:assets";
 ---
 
@@ -30,28 +31,18 @@ import { Image } from "astro:assets";
               />
             </div>
             <div>
-              <div
-                class="grid font-minecraft md:gap-5 gap-[5.5px] grid-cols-4 md:grid-cols-2 lg:grid-cols-2 place-content-center place-items-center"
-              >
-                {
-                  Games.map((game) => (
-                    <div class="border hover:border-[#666] active:border-black size-fit">
-                      <a
-                        id="button"
-                        href={game.url}
-                        class="size-20 border"
-                        title={game.name}
-                        target="_blank"
-                      >
-                        <img
-                          src={game.src}
-                          alt={game.name}
-                          class="size-15 aspect-square"
-                        />
-                      </a>
-                    </div>
-                  ))
-                }
+              <div class="grid font-minecraft md:gap-5 gap-[5.5px] grid-cols-4 md:grid-cols-2 lg:grid-cols-2 place-content-center place-items-center">
+              {Games.map((game) => (
+              <div class="border hover:border-[#666] active:border-black size-fit">
+                <a id="button" href={game.url} class="size-20 border" title={game.name} target="_blank">
+                  <img
+                      src={game.src}
+                      alt={game.name}
+                      class="size-15 aspect-square"
+                    />
+                </a>
+              </div>
+              ))}
               </div>
             </div>
           </div>
@@ -62,14 +53,14 @@ import { Image } from "astro:assets";
     <footer class="flex items-center justify-center w-full" transition:animate="none" transition:name="buttons">
       <div
         id="links"
-        class="grid mt-4 font-minecraft md:gap-4 gap-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-2"
+        class="grid mt-4 font-minecraft md:gap-4 gap-1 grid-cols-1"
       >
         {
-          Bunttons.map((button) => (
+          WhatsappButtons.map((button) => (
             <Button
               text={button.name}
               href={button.url}
-              style=" lg:h-10 w-90 h-10"
+              style=" lg:h-10 md:w-184.5 w-90 h-10"
               target={button.target}
             />
           ))
